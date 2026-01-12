@@ -260,6 +260,10 @@ section {
   width: 100%;
 }
 
+.loader-glow {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
 .form-input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 2px var(--accent-glow);

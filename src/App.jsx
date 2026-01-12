@@ -57,7 +57,33 @@ const ScrollToTop = () => {
   return null;
 };
 
-// --- Components ---
+
+const LoadingSpinner = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '4rem' }}>
+    <motion.div
+      style={{
+        width: '50px',
+        height: '50px',
+        border: '3px solid var(--border-color)',
+        borderTop: '3px solid var(--accent)',
+        borderRadius: '50%',
+      }}
+      animate={{ rotate: 360 }}
+      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+    >
+      <motion.div
+        style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          boxShadow: '0 0 20px var(--accent-glow)',
+        }}
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      />
+    </motion.div>
+  </div>
+);
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -552,27 +578,29 @@ const BlogPage = () => {
 
   return (
     <section id="blog" className="container" style={{ paddingTop: '8rem', minHeight: '100vh' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-        {loading ? (
-          <p>Loading posts...</p>
-        ) : posts.length > 0 ? (
-          posts.map((post) => (
-            <motion.div key={post.id} className="glass" style={{ padding: '2rem' }} whileHover={{ scale: 1.02 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.8rem', opacity: 0.6 }}>{post.date}</span>
-                <span style={{ fontSize: '0.8rem', opacity: 0.6, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <Eye size={14} /> {post.views || 0}
-                </span>
-              </div>
-              <h3 style={{ margin: '0 0 1rem' }}>{post.title}</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{post.snippet}</p>
-              <Link to={`/blog/${post.id}`} className="accent-text">Read more →</Link>
-            </motion.div>
-          ))
-        ) : (
-          <p>No posts found.</p>
-        )}
-      </div>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <motion.div key={post.id} className="glass" style={{ padding: '2rem' }} whileHover={{ scale: 1.02 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '0.8rem', opacity: 0.6 }}>{post.date}</span>
+                  <span style={{ fontSize: '0.8rem', opacity: 0.6, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <Eye size={14} /> {post.views || 0}
+                  </span>
+                </div>
+                <h3 style={{ margin: '0 0 1rem' }}>{post.title}</h3>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{post.snippet}</p>
+                <Link to={`/blog/${post.id}`} className="accent-text">Read more →</Link>
+              </motion.div>
+            ))
+          ) : (
+            <p>No posts found.</p>
+          )}
+        </div>
+      )}
     </section>
   );
 };
@@ -781,7 +809,11 @@ const BlogPostPage = () => {
     fetchPost();
   }, [id]);
 
-  if (loading) return <section className="container" style={{ paddingTop: '8rem' }}>Loading...</section>;
+  if (loading) return (
+    <section className="container" style={{ paddingTop: '8rem' }}>
+      <LoadingSpinner />
+    </section>
+  );
   if (!post) return <section className="container" style={{ paddingTop: '8rem' }}>Post not found.</section>;
 
   return (
