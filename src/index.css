@@ -247,3 +247,61 @@ section {
     font-size: 2rem;
   }
 }
+
+/* Forms */
+.form-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+/* Links & Buttons */
+.hover-link:hover {
+  color: var(--accent);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+/* Mobile Nav */
+@media (max-width: 850px) {
+
+  .desktop-nav,
+  .desktop-nav-separator,
+  .desktop-controls {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  .navbar-container {
+    padding: 0.5rem 1rem !important;
+  }
+}

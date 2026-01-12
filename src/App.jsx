@@ -59,6 +59,106 @@ const ScrollToTop = () => {
 
 // --- Components ---
 
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.3 }}
+  >
+    {children}
+  </motion.div>
+);
+
+const TechRadar = () => {
+  const skills = [
+    { name: 'React', value: 95, category: 'Frontend' },
+    { name: 'JavaScript', value: 90, category: 'Frontend' },
+    { name: 'Node.js', value: 80, category: 'Backend' },
+    { name: 'Firebase', value: 85, category: 'Backend' },
+    { name: 'CSS/UI', value: 90, category: 'Frontend' },
+    { name: 'Mentorship', value: 85, category: 'Soft' },
+    { name: 'English', value: 75, category: 'Soft' },
+  ];
+
+  const levels = [20, 40, 60, 80, 100];
+  const angleStep = (Math.PI * 2) / skills.length;
+  const radius = 150;
+  const centerX = 200;
+  const centerY = 200;
+
+  const points = skills.map((s, i) => {
+    const x = centerX + radius * (s.value / 100) * Math.cos(i * angleStep - Math.PI / 2);
+    const y = centerY + radius * (s.value / 100) * Math.sin(i * angleStep - Math.PI / 2);
+    return `${x},${y}`;
+  }).join(' ');
+
+  return (
+    <div className="glass" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3rem' }}>
+      <h3 style={{ marginBottom: '1.5rem' }}>Technical Expertise Radar</h3>
+      <svg width="400" height="400" viewBox="0 0 400 400" style={{ maxWidth: '100%', height: 'auto' }}>
+        {/* Background Grids */}
+        {levels.map(level => (
+          <polygon
+            key={level}
+            points={skills.map((_, i) => {
+              const x = centerX + radius * (level / 100) * Math.cos(i * angleStep - Math.PI / 2);
+              const y = centerY + radius * (level / 100) * Math.sin(i * angleStep - Math.PI / 2);
+              return `${x},${y}`;
+            }).join(' ')}
+            fill="none"
+            stroke="var(--border-color)"
+            strokeDasharray="4 4"
+          />
+        ))}
+
+        {/* Axis Lines */}
+        {skills.map((_, i) => {
+          const x = centerX + radius * Math.cos(i * angleStep - Math.PI / 2);
+          const y = centerY + radius * Math.sin(i * angleStep - Math.PI / 2);
+          return <line key={i} x1={centerX} y1={centerY} x2={x} y2={y} stroke="var(--border-color)" />;
+        })}
+
+        {/* Data Area */}
+        <motion.polygon
+          points={points}
+          fill="rgba(16, 185, 129, 0.2)"
+          stroke="var(--accent)"
+          strokeWidth="2"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+
+        {/* Labels */}
+        {skills.map((s, i) => {
+          const x = centerX + (radius + 20) * Math.cos(i * angleStep - Math.PI / 2);
+          const y = centerY + (radius + 20) * Math.sin(i * angleStep - Math.PI / 2);
+          return (
+            <text
+              key={i}
+              x={x}
+              y={y}
+              fill="var(--text-secondary)"
+              fontSize="12"
+              textAnchor="middle"
+              alignmentBaseline="middle"
+              style={{ fontWeight: 500 }}
+            >
+              {s.name}
+            </text>
+          );
+        })}
+      </svg>
+      <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>● Inner: Learning</div>
+        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>● Outer: Expert</div>
+      </div>
+    </div>
+  );
+};
+
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -326,8 +426,8 @@ const AboutPage = () => {
     <section id="about" className="container" style={{ paddingTop: '8rem', minHeight: '100vh' }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{t('about.p1')}</p>
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{t('about.p2')}</p>
+          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.8' }}>{t('about.bio') || t('about.p1')}</p>
+          <TechRadar />
           <div className="glass" style={{ padding: '1.5rem', marginTop: '2rem' }}>
             <h3 style={{ marginBottom: '1rem' }}>{t('about.focus')}</h3>
             <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -703,22 +803,45 @@ const BlogPostPage = () => {
   );
 };
 
-const Footer = () => (
-  <footer style={{ padding: '2rem', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '4rem' }}>
-    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-      Built by Jo'rabek Egamov &copy; {new Date().getFullYear()}
-    </p>
-  </footer>
-);
 
 // --- Main App ---
 
-export default function App() {
-  const [theme, setTheme] = useState('dark');
+export const AppContent = () => {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  return (
+    <>
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <main>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PageWrapper><HeroPage /></PageWrapper>} />
+            <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
+            <Route path="/projects" element={<PageWrapper><ProjectsPage /></PageWrapper>} />
+            <Route path="/blog" element={<PageWrapper><BlogPage /></PageWrapper>} />
+            <Route path="/blog/:id" element={<PageWrapper><BlogPostPage /></PageWrapper>} />
+            <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
+            <Route path="/admin" element={<PageWrapper><AdminPage /></PageWrapper>} />
+            <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+      <footer className="container" style={{ padding: '4rem 0', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '4rem' }}>
+        <p style={{ color: 'var(--text-secondary)' }}>
+          © {new Date().getFullYear()} Jurabek Egamov. Built with React & Passion.
+        </p>
+      </footer>
+    </>
+  );
+};
+
+function App() {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   return (
@@ -727,57 +850,10 @@ export default function App() {
         <div className={theme}>
           <CustomCursor />
           <ScrollToTop />
-          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-
-          <main>
-            <Routes>
-              <Route path="/" element={<HeroPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/admin" element={<AdminPage />} />
-              <Route path="/blog/:id" element={<BlogPostPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-
-          <Footer />
+          <AppContent />
         </div>
-
-        <style>{`
-          .form-input {
-              background: rgba(var(--bg-dark-rgb), 0.5);
-              border: 1px solid var(--border-color);
-              border-radius: 0.5rem;
-              padding: 0.75rem;
-              color: var(--text-primary);
-              outline: none;
-              transition: var(--transition);
-          }
-          .form-input:focus {
-              border-color: var(--accent);
-              box-shadow: 0 0 0 2px var(--accent-glow);
-          }
-          .hover-link:hover { color: var(--accent); }
-          .btn-icon { background: none; border: none; cursor: pointer; color: var(--text-secondary); padding: 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-          .btn-icon:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
-          .social-link { color: var(--text-secondary); transition: var(--transition); }
-          .social-link:hover { color: var(--accent); transform: translateY(-3px); }
-
-          @media (max-width: 850px) {
-            .desktop-nav, .desktop-nav-separator, .desktop-controls {
-              display: none !important;
-            }
-            .mobile-menu-toggle {
-              display: flex !important;
-            }
-            .navbar-container {
-              padding: 0.5rem 1rem !important;
-            }
-          }
-        `}</style>
       </Router>
     </ThemeContext.Provider>
   );
 }
+export default App;
