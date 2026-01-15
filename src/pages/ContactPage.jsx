@@ -24,15 +24,15 @@ export const ContactPage = () => {
     };
 
     const contactInfo = [
-        { icon: <Mail size={20} />, label: "Email", value: "egamovj@gmail.com", link: "mailto:egamovj@gmail.com" },
-        { icon: <Phone size={20} />, label: "Phone", value: "+998 (90) 000-00-00", link: "tel:+998900000000" },
+        { icon: <Mail size={20} />, label: "Email", value: "egamovj90@gmail.com", link: "mailto:egamovj@gmail.com" },
+        { icon: <Phone size={20} />, label: "Phone", value: "+998 (93) 877-09-19", link: "tel:+998938770919" },
         { icon: <MapPin size={20} />, label: "Location", value: "Khorezm, Uzbekistan", link: "#" }
     ];
 
     const socials = [
-        { icon: <Github size={24} />, link: "https://github.com/jurabekegamov", label: "GitHub" },
-        { icon: <Linkedin size={24} />, link: "https://linkedin.com/in/jurabekegamov", label: "LinkedIn" },
-        { icon: <MessageCircle size={24} />, link: "https://t.me/jurabekegamov", label: "Telegram" }
+        { icon: <Github size={24} />, link: "https://github.com/egamovj", label: "GitHub" },
+        { icon: <Linkedin size={24} />, link: "https://linkedin.com/in/egamovj", label: "LinkedIn" },
+        { icon: <MessageCircle size={24} />, link: "https://t.me/egamov_j", label: "Telegram" }
     ];
 
     return (
