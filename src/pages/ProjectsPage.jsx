@@ -11,27 +11,67 @@ export const ProjectsPage = () => {
     const projects = [
         {
             id: 1,
-            name: "Complex ERP System",
-            desc: "A full-scale internal management system with advanced data visualization.",
-            tech: ["React", "TypeScript", "Node.js"],
-            problem: "Traditional ERPs were slow and lacked real-time synchronization between departments, causing data lag and inventory errors.",
-            solution: "Implemented a WebSocket-driven architecture with a React frontend, reducing data updates from minutes to milliseconds and improving synchronization accuracy by 95%."
+            name: "Esco Billiard",
+            desc: "Professional ERP management system for billiard club operations.",
+            tech: ["React", "Tailwind CSS", "Netlify"],
+            problem: "Billiard clubs often rely on manual or fragmented systems for tracking table bookings, staff time, and financial performance.",
+            solution: "Provides a centralized, secure ERP platform to manage all aspects of the business—from table occupancy to financial reporting."
         },
         {
             id: 2,
-            name: "Mentorship Platform",
-            desc: "Learning management system for students and mentors to track progress.",
-            tech: ["Next.js", "Firebase", "Tailwind CSS"],
-            problem: "Mentors struggled to track the individual progress of 50+ students across different modules without manual spreadsheets.",
-            solution: "Created a centralized dashboard with automated progress tracking and instant feedback loops, saving mentors 10+ hours per week on admin tasks."
+            name: "Cyber Quiz",
+            desc: "Cyberpunk-themed gamified learning platform for mastering HTML and CSS.",
+            tech: ["React", "Custom CSS", "Netlify"],
+            problem: "Beginners often find learning web development (HTML/CSS) dry or unmotivating, leading to high drop-out rates.",
+            solution: "Gamifies education through 'missions', international rankings, and certifications, making learning engaging and visually stimulating."
         },
         {
             id: 3,
-            name: "Billiard ERP",
-            desc: "Specialized ERP for billiard clubs handling session management and thermal receipt printing.",
-            tech: ["React", "Express", "PostgreSQL"],
-            problem: "Manual session timing led to revenue loss and customer disputes over billing accuracy.",
-            solution: "Developed an automated timing system integrated with a thermal printer utility, ensuring 100% billing accuracy and professional receipts."
+            name: "Budget Mate",
+            desc: "Intuitive personal finance application for tracking income, expenses, and real-time balances.",
+            tech: ["React", "Tailwind CSS", "Lucide React"],
+            problem: "Many individuals struggle to maintain financial discipline because they lack a simple way to record daily transactions and visualize spending.",
+            solution: "Offers a user-friendly interface for logging transactions with categories, featuring a dashboard for high-level financial insights."
+        },
+        {
+            id: 4,
+            name: "Skill Bridge",
+            desc: "Microlearning platform for short, specific skill lessons (under 5 minutes).",
+            tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+            problem: "Learners and creators find long-form courses too time-consuming when they only need to master or share a specific, niche skill.",
+            solution: "Dedicated platform for short-form educational content with a community-driven request system and gamification."
+        },
+        {
+            id: 5,
+            name: "Altverse",
+            desc: "Interactive web application for exploring infinite realities and dimensional boundaries.",
+            tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+            problem: "Lack of immersive and interactive ways to visualize and learn about fictional or theoretical multiverses.",
+            solution: "A visually stunning, animated explorer that categorizes various universes and characters with smooth navigational transitions."
+        },
+        {
+            id: 6,
+            name: "Memory Game",
+            desc: "Classic browser-based matching game for training memory and cognitive focus.",
+            tech: ["HTML5", "CSS3", "JavaScript"],
+            problem: "People need simple and engaging ways to train their memory and cognitive focus.",
+            solution: "A lightweight, easy-to-play game that provides instant visual feedback and a clean user interface."
+        },
+        {
+            id: 7,
+            name: "Stuff E-commerce",
+            desc: "Modern e-commerce storefront focused on technology products and product discovery.",
+            tech: ["React", "Redux", "CSS Modules"],
+            problem: "Online shopping for tech gadgets is often cluttered, making it difficult to find and manage items.",
+            solution: "Streamlined interface that prioritizes product discovery and a simple, intuitive shopping cart flow."
+        },
+        {
+            id: 8,
+            name: "IT Park Khorezm",
+            desc: "Professional corporate landing page highlighting mission-driven software services.",
+            tech: ["React", "Tailwind CSS", "Framer Motion"],
+            problem: "Local IT institutions often lack a professional online presence to communicate capabilities to local talent and global clients.",
+            solution: "High-performance landing page with professional animations to establish a strong digital identity."
         }
     ];
 
@@ -46,7 +86,7 @@ export const ProjectsPage = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         whileHover={{ y: -10 }}
-                        style={{ padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%', cursor: 'pointer' }}
+                        style={{ padding: '2rem', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
                         onClick={() => setSelectedProject(proj)}
                     >
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
