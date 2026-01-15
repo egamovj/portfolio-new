@@ -873,6 +873,7 @@ function App() {
 
   useEffect(() => {
     document.body.className = theme;
+    document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
 
