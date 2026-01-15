@@ -21,6 +21,7 @@ import { ContactPage } from './pages/ContactPage';
 import { AdminPage } from './pages/AdminPage';
 import { SnippetsPage } from './pages/SnippetsPage';
 import { NotFound } from './pages/NotFound';
+import { DevTerminal } from './components/ui/DevTerminal';
 
 export const AppContent = () => {
   const location = useLocation();
@@ -49,6 +50,7 @@ export const AppContent = () => {
           © {new Date().getFullYear()} Jo'rabek Egamov. Built with React & Passion.
         </p>
       </footer>
+      <DevTerminal />
     </>
   );
 };
