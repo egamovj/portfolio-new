@@ -10,9 +10,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Jurabek Egamov Portfolio',
+        name: 'Jo\'rabek Egamov Portfolio',
         short_name: 'Egamov',
-        description: 'Portfolio of Jurabek Egamov, Middle Frontend Developer & Mentor',
+        description: 'Portfolio of Jo\'rabek Egamov, Frontend Developer & Mentor',
         theme_color: '#10b981',
         icons: [
           {

@@ -14,14 +14,14 @@ const resources = {
                 blog: 'Blog'
             },
             hero: {
-                role: 'MIDDLE FRONTEND DEVELOPER & MENTOR',
+                role: 'FRONTEND DEVELOPER & MENTOR',
                 tagline: 'Building modern, scalable, and user-friendly web applications. Passionate about crafting exceptional digital experiences and mentoring the next generation of developers.',
                 view_projects: 'View Projects',
                 contact_me: 'Contact Me'
             },
             about: {
                 title: 'About Me',
-                bio: "I'm a Middle Frontend Developer and Mentor with a passion for building high-quality commercial projects and helping others grow in their tech journey.",
+                bio: "I'm a Frontend Developer and Mentor with a passion for building high-quality commercial projects and helping others grow in their tech journey.",
                 p1: "Hello! I'm Jurabek, a frontend developer who enjoys building things that live on the internet. My journey in web development evolved from a curiosity about how things work to a professional career focused on building high-quality commercial projects.",
                 p2: 'Currently, I serve as a Mentor at the "Al-Khwarizmi Heirs" project, where I guide aspiring developers through the complexities of modern frontend engineering.',
                 focus: 'Focus Areas',
@@ -36,7 +36,7 @@ const resources = {
             experience: {
                 title: 'Experience & Mentorship',
                 mentor_role: 'Mentor @ Al-Khwarizmi Heirs',
-                dev_role: 'Middle Frontend Developer',
+                dev_role: 'Frontend Developer',
                 current: 'Current',
                 commercial: 'Commercial Work'
             },
@@ -67,16 +67,16 @@ const resources = {
                 blog: 'Blog'
             },
             hero: {
-                role: 'MIDDLE FRONTEND DASTURCHI VA MENTOR',
+                role: 'FRONTEND DASTURCHI VA MENTOR',
                 tagline: 'Zamonaviy, kengaytiriladigan va foydalanuvchilar uchun qulay veb-ilovalarni yaratish. Murakkab raqamli tajribalarni shakllantirish va yangi avlod dasturchilariga mentorlik qilishga ishtiyoqmandman.',
                 view_projects: 'Loyihalarni ko\'rish',
                 contact_me: 'Men bilan bog\'lanish'
             },
             about: {
                 title: 'Men haqimda',
-                bio: "Men Middle Frontend dasturchi va mentorman. Yuqori sifatli tijorat loyihalarini yaratish va boshqalarga texnologiya sohasida o'sishga yordam berishga ishtiyoqmandman.",
+                bio: "Men Frontend dasturchi va mentorman. Yuqori sifatli tijorat loyihalarini yaratish va boshqalarga texnologiya sohasida o'sishga yordam berishga ishtiyoqmandman.",
                 p1: "Salom! Men Jo'rabekman, internetda yashaydigan narsalarni yaratishdan zavqlanadigan frontend dasturchiman. Veb-ishlab chiqishdagi sayohatim narsalar qanday ishlashiga bo'lgan qiziqishdan yuqori sifatli tijorat loyihalarini yaratishga qaratilgan professional karyeraga aylandi.",
-                p2: 'Hozirda men "Al-Xorizmiy vorislari" loyihasida mentor sifatida faoliyat yuritaman, u yerda intiluvchan dasturchilarni zamonaviy frontend injiniringining murakkabliklari bo\'yicha boshqaraman.',
+                p2: 'Hozirda men "Al-Xorazmiy vorislari" loyihasida mentor sifatida faoliyat yuritaman, u yerda intiluvchan dasturchilarni zamonaviy frontend injiniringining murakkabliklari bo\'yicha boshqaraman.',
                 focus: 'Asosiy yo\'nalishlar',
                 commercial: 'Tijorat UX',
                 mentoring: 'Mentorlik',
@@ -89,7 +89,7 @@ const resources = {
             experience: {
                 title: 'Tajriba va Mentorlik',
                 mentor_role: 'Mentor @ Al-Xorizmiy vorislari',
-                dev_role: 'Middle Frontend Dasturchi',
+                dev_role: 'Frontend Dasturchi',
                 current: 'Hozirgi',
                 commercial: 'Tijorat ishlari'
             },
@@ -120,14 +120,14 @@ const resources = {
                 blog: 'Блог'
             },
             hero: {
-                role: 'MIDDLE FRONTEND РАЗРАБОТЧИК И МЕНТОР',
+                role: 'FRONTEND РАЗРАБОТЧИК И МЕНТОР',
                 tagline: 'Создание современных, масштабируемых и удобных веб-приложений. Увлечен созданием исключительного цифрового опыта и наставничеством следующего поколения разработчиков.',
                 view_projects: 'Посмотреть проекты',
                 contact_me: 'Связаться со мной'
             },
             about: {
                 title: 'Обо мне',
-                bio: "Я Middle Frontend разработчик и ментор, увлеченный созданием высококачественных коммерческих проектов и помощью другим в их профессиональном росте.",
+                bio: "Я Frontend разработчик и ментор, увлеченный созданием высококачественных коммерческих проектов и помощью другим в их профессиональном росте.",
                 p1: "Привет! Я Журабек, фронтенд-разработчик, которому нравится создавать вещи, живущие в интернете. Мой путь в веб-разработке превратился из любопытства к тому, как все устроено, в профессиональную карьеру, ориентированную на создание высококачественных коммерческих проектов.",
                 p2: 'В настоящее время я работаю ментором в проекте «Наследники Аль-Хорезми», где обучаю начинающих разработчиков тонкостям современного фронтенд-инжиниринга.',
                 focus: 'Направления',
@@ -142,7 +142,7 @@ const resources = {
             experience: {
                 title: 'Опыт и Менторство',
                 mentor_role: 'Ментор @ Наследники Аль-Хорезми',
-                dev_role: 'Middle Frontend Разработчик',
+                dev_role: 'Frontend Разработчик',
                 current: 'Настоящее время',
                 commercial: 'Коммерческая работа'
             },
