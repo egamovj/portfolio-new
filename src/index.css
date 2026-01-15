@@ -309,3 +309,45 @@ section {
     padding: 0.5rem 1rem !important;
   }
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-dark);
+}
+
+/* Additional Utilities */
+.image-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.glass:hover .image-overlay {
+  opacity: 1 !important;
+}
+
+.tech-tag {
+  transition: var(--transition);
+}
+
+.tech-tag:hover {
+  background: var(--accent-glow) !important;
+  color: var(--accent);
+}
