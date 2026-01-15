@@ -1,5 +1,6 @@
 # React + Vite
 <h1>Portfolio Site</h1>
+<p>Portfolio site with React.js</p>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
