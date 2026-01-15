@@ -336,7 +336,7 @@ section {
 
 /* Additional Utilities */
 .image-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
 }
 
 .glass:hover .image-overlay {
@@ -350,4 +350,24 @@ section {
 .tech-tag:hover {
   background: var(--accent-glow) !important;
   color: var(--accent);
+}
+
+/* Shimmer Loading Animation */
+.shimmer-loading {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.05) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }

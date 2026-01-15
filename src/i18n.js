@@ -46,7 +46,19 @@ const resources = {
                 problem: 'The Problem',
                 solution: 'The Solution'
             },
+            snippets: {
+                title: 'Code Gallery',
+                subtitle: 'Useful Snippets',
+                copy: 'Copy',
+                copied: 'Copied!'
+            },
+            social_proof: {
+                title: 'Community Voices'
+            },
             contact: {
+                success_message: 'Your message has been sent successfully!',
+                error_message: 'Failed to send message. Please try again later.',
+                loading_message: 'Sending message...',
                 title: 'Get In Touch',
                 subtitle: "I'm currently looking for new opportunities and collaborations. Whether you have a question or just want to say hi, my inbox is always open!",
                 name: 'Name',
@@ -98,6 +110,15 @@ const resources = {
                 view_case: 'Keysni ko\'rish',
                 problem: 'Muammo',
                 solution: 'Yechim'
+            },
+            snippets: {
+                title: 'Kod Namunalar',
+                subtitle: 'Foydali parchalar',
+                copy: 'Nusxa',
+                copied: 'Nusxalandi!'
+            },
+            social_proof: {
+                title: 'Jamoatchilik fikri'
             },
             contact: {
                 title: 'Aloqaga chiqing',
@@ -151,6 +172,15 @@ const resources = {
                 view_case: 'Кейс',
                 problem: 'Проблема',
                 solution: 'Решение'
+            },
+            snippets: {
+                title: 'Галерея кода',
+                subtitle: 'Полезные фрагменты',
+                copy: 'Копировать',
+                copied: 'Скопировано!'
+            },
+            social_proof: {
+                title: 'Мнение сообщества'
             },
             contact: {
                 title: 'Связаться',

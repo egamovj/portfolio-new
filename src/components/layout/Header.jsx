@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Globe } from 'lucide-react';
+import { X, Globe, FileText, Download } from 'lucide-react';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
 import { ThemeSwitcher } from '../ui/ThemeSwitcher';
 
@@ -16,11 +16,17 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                         <li><Link to="/" className="hover-link">{t('nav.home')}</Link></li>
                         <li><Link to="/about" className="hover-link">{t('nav.about')}</Link></li>
                         <li><Link to="/projects" className="hover-link">{t('nav.projects')}</Link></li>
+                        <li><Link to="/snippets" className="hover-link">Snippets</Link></li>
                         <li><Link to="/blog" className="hover-link">{t('nav.blog')}</Link></li>
                         <li><Link to="/contact" className="hover-link">{t('nav.contact')}</Link></li>
                     </ul>
                 </nav>
                 <div className="desktop-nav-separator" style={{ height: '24px', width: '1px', background: 'var(--border-color)' }}></div>
+                <div className="resume-download">
+                    <a href="/resume.pdf" download className="btn btn-secondary" style={{ padding: '0.4rem 1rem', fontSize: '0.8rem', gap: '0.5rem' }}>
+                        <Download size={14} /> Resume
+                    </a>
+                </div>
                 <div className="desktop-controls" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                     <LanguageSwitcher />
                     <ThemeSwitcher />
@@ -55,10 +61,16 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                                 <li><Link to="/" className="hover-link" onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</Link></li>
                                 <li><Link to="/about" className="hover-link" onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</Link></li>
                                 <li><Link to="/projects" className="hover-link" onClick={() => setIsMenuOpen(false)}>{t('nav.projects')}</Link></li>
+                                <li><Link to="/snippets" className="hover-link" onClick={() => setIsMenuOpen(false)}>Snippets</Link></li>
                                 <li><Link to="/blog" className="hover-link" onClick={() => setIsMenuOpen(false)}>{t('nav.blog')}</Link></li>
                                 <li><Link to="/contact" className="hover-link" onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</Link></li>
                             </ul>
                         </nav>
+                        <div className="resume-download-mobile">
+                            <a href="/resume.pdf" download className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setIsMenuOpen(false)}>
+                                <Download size={18} style={{ marginRight: '0.5rem' }} /> Resume CV
+                            </a>
+                        </div>
                         <div style={{ width: '100%', height: '1px', background: 'var(--border-color)' }}></div>
                         <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', alignItems: 'center' }}>
                             <LanguageSwitcher />

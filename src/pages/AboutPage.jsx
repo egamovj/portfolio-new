@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Terminal, Users, Briefcase, Code, Award, Target, Zap, Rocket } from 'lucide-react';
-import { TechRadar } from '../components/ui/TechRadar';
+import { SkillTree } from '../components/ui/SkillTree';
 
 export const AboutPage = () => {
     const { t } = useTranslation();
@@ -76,7 +76,7 @@ export const AboutPage = () => {
                 </motion.div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    <TechRadar />
+                    <SkillTree />
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -92,6 +92,67 @@ export const AboutPage = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Experience Timeline */}
+            <div style={{ marginTop: '6rem' }}>
+                <h3 className="section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Experience & Milestones</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                    {[
+                        {
+                            year: '2023 - Present',
+                            title: 'Frontend Mentor',
+                            company: '"Al-Khwarizmi Heirs"',
+                            desc: 'Leading advanced frontend development tracks and mentoring students in React, TypeScript, and modern ecosystem.'
+                        },
+                        {
+                            year: '2022 - 2023',
+                            title: 'Frontend Developer',
+                            company: 'Commercial Projects',
+                            desc: 'Developed high-performance ERP systems and custom web solutions for local businesses.'
+                        },
+                        {
+                            year: '2021',
+                            title: 'Started Tech Journey',
+                            company: 'Independent Learning',
+                            desc: 'Deep dived into the JavaScript ecosystem, focusing on React and building scalable UI systems.'
+                        }
+                    ].map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            style={{
+                                display: 'flex',
+                                gap: '2rem',
+                                borderLeft: '2px solid var(--border-color)',
+                                paddingLeft: '2rem',
+                                paddingBottom: '3rem',
+                                position: 'relative'
+                            }}
+                        >
+                            <div style={{
+                                position: 'absolute',
+                                left: '-9px',
+                                top: '0',
+                                width: '16px',
+                                height: '16px',
+                                borderRadius: '50%',
+                                background: 'var(--accent)',
+                                boxShadow: '0 0 10px var(--accent)'
+                            }}></div>
+                            <div style={{ minWidth: '120px', fontWeight: 700, color: 'var(--accent)' }}>{item.year}</div>
+                            <div>
+                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{item.title}</h4>
+                                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '0.8rem' }}>{item.company}</div>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.6' }}>{item.desc}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+
         </section>
     );
 };

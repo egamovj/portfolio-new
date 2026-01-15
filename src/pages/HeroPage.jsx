@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { GitHubStats } from '../components/ui/GitHubStats';
 
 export const HeroPage = () => {
     const { t } = useTranslation();
@@ -26,7 +25,6 @@ export const HeroPage = () => {
                     <Link to="/projects" className="btn btn-primary">{t('hero.view_projects')} <ChevronRight size={18} /></Link>
                     <Link to="/contact" className="btn btn-secondary">{t('hero.contact_me')}</Link>
                 </div>
-                <GitHubStats />
             </motion.div>
         </section>
     );
