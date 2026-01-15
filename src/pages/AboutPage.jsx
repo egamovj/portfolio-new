@@ -15,7 +15,7 @@ export const AboutPage = () => {
     ];
 
     return (
-        <section id="about" className="container" style={{ paddingTop: '8rem', minHeight: '100vh' }}>
+        <section id="about" className="container" style={{ paddingTop: '5.5rem', minHeight: '100vh' }}>
             <h2 className="section-title"><span>{t('nav.about')}</span>Professional Journey</h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>

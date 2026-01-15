@@ -126,7 +126,7 @@ export const ProjectsPage = () => {
         [filter, projects]);
 
     return (
-        <section id="projects" className="container" style={{ paddingTop: '8rem', minHeight: '100vh' }}>
+        <section id="projects" className="container" style={{ paddingTop: '5.5rem', minHeight: '100vh' }}>
             <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
                 <h2 className="section-title"><span>{t('nav.projects')}</span>My Creative Work</h2>
 

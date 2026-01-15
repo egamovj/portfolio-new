@@ -44,7 +44,7 @@ export const AppContent = () => {
           </Routes>
         </AnimatePresence>
       </main>
-      <footer className="container" style={{ padding: '4rem 0', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '4rem' }}>
+      <footer className="container" style={{ padding: '2rem 0', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '4rem' }}>
         <p style={{ color: 'var(--text-secondary)' }}>
           © {new Date().getFullYear()} Jo'rabek Egamov. Built with React & Passion.
         </p>
