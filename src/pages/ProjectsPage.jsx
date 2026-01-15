@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Terminal, ExternalLink, Github, Globe, Filter } from 'lucide-react';
 import { Modal } from '../components/common/Modal';
 
-// Project Images
 import escoImg from '../assets/projects/esco_billiard.png';
 import cyberImg from '../assets/projects/cyber_quiz.png';
 import budgetImg from '../assets/projects/budget_mate.png';
@@ -27,6 +26,7 @@ export const ProjectsPage = () => {
             tech: ["React", "Tailwind CSS", "Netlify"],
             category: "Commercial",
             image: escoImg,
+            impact: ["+40% Efficiency", "Real-time Tracking", "Automated Reports"],
             problem: "Billiard clubs often rely on manual or fragmented systems for tracking table bookings, staff time, and financial performance.",
             solution: "Provides a centralized, secure ERP platform to manage all aspects of the business—from table occupancy to financial reporting."
         },
@@ -37,6 +37,7 @@ export const ProjectsPage = () => {
             tech: ["React", "Custom CSS", "Netlify"],
             category: "Education",
             image: cyberImg,
+            impact: ["500+ Active Users", "95% Engagement", "Global Ranking"],
             github: "https://github.com/egamovj/quizapp-react",
             live: "https://cyberdsgn-quizapp.netlify.app/",
             problem: "Beginners often find learning web development (HTML/CSS) dry or unmotivating, leading to high drop-out rates.",
@@ -49,6 +50,7 @@ export const ProjectsPage = () => {
             tech: ["React", "Tailwind CSS", "Lucide React"],
             category: "Finance",
             image: budgetImg,
+            impact: ["Smart Insights", "Daily Tracking", "Save 20% Monthly"],
             github: "https://github.com/egamovj/budget-mate",
             live: "https://budgettmate.netlify.app/",
             problem: "Many individuals struggle to maintain financial discipline because they lack a simple way to record daily transactions and visualize spending.",
@@ -61,6 +63,7 @@ export const ProjectsPage = () => {
             tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
             category: "Education",
             image: skillImg,
+            impact: ["Micro-learning", "Community Driven", "Fast Skill-up"],
             github: "https://github.com/egamovj/skill-bridge",
             live: "",
             problem: "Learners and creators find long-form courses too time-consuming when they only need to master or share a specific, niche skill.",
@@ -158,7 +161,6 @@ export const ProjectsPage = () => {
                             whileHover={{ y: -10 }}
                             style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
                         >
-                            {/* Project Image */}
                             <div
                                 style={{
                                     height: '200px',
@@ -175,26 +177,47 @@ export const ProjectsPage = () => {
                                 {!proj.image && <Terminal size={60} className="accent-text" style={{ opacity: 0.2 }} />}
                             </div>
 
-                            {/* Content */}
                             <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem' }}>
                                     <h3 style={{ fontSize: '1.3rem' }}>{proj.name}</h3>
                                     <div style={{ display: 'flex', gap: '0.8rem' }}>
-                                        <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View Code">
-                                            <Github size={20} />
-                                        </a>
-                                        <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn-icon" title="Live Demo">
-                                            <Globe size={20} />
-                                        </a>
+                                        {proj.github && (
+                                            <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View Code">
+                                                <Github size={18} />
+                                            </a>
+                                        )}
+                                        {proj.live && (
+                                            <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn-icon" title="Live Demo">
+                                                <ExternalLink size={18} />
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
 
                                 <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem', flexGrow: 1 }}>{proj.desc}</p>
 
+                                {/* Impact Metrics */}
+                                {proj.impact && (
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                                        {proj.impact.map((imp, idx) => (
+                                            <span key={idx} style={{
+                                                fontSize: '0.75rem',
+                                                padding: '0.2rem 0.6rem',
+                                                borderRadius: '1rem',
+                                                background: 'var(--accent-glow)',
+                                                color: 'var(--accent)',
+                                                border: '1px solid rgba(0, 191, 154, 0.2)'
+                                            }}>
+                                                {imp}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                                         {proj.tech.slice(0, 3).map(tech => (
-                                            <span key={tech} className="tech-tag" style={{ fontSize: '0.75rem', background: 'rgba(255,255,255,0.05)', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{tech}</span>
+                                            <span key={tech} style={{ fontSize: '0.75rem', background: 'rgba(255,255,255,0.05)', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{tech}</span>
                                         ))}
                                     </div>
                                     <button
@@ -245,4 +268,5 @@ export const ProjectsPage = () => {
         </section>
     );
 };
+
 

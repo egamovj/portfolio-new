@@ -19,6 +19,7 @@ import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminPage } from './pages/AdminPage';
+import { SnippetsPage } from './pages/SnippetsPage';
 import { NotFound } from './pages/NotFound';
 
 export const AppContent = () => {
@@ -36,6 +37,7 @@ export const AppContent = () => {
             <Route path="/projects" element={<PageWrapper><ProjectsPage /></PageWrapper>} />
             <Route path="/blog" element={<PageWrapper><BlogPage /></PageWrapper>} />
             <Route path="/blog/:id" element={<PageWrapper><BlogPostPage /></PageWrapper>} />
+            <Route path="/snippets" element={<PageWrapper><SnippetsPage /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
             <Route path="/admin" element={<PageWrapper><AdminPage /></PageWrapper>} />
             <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
