@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Terminal, Users, Briefcase, Code, Award, Target, Zap, Rocket } from 'lucide-react';
 import { SkillTree } from '../components/ui/SkillTree';
+import { QualityBadge } from '../components/ui/QualityBadge';
+import { DynamicResume } from '../components/ui/DynamicResume';
 
 export const AboutPage = () => {
     const { t } = useTranslation();
@@ -93,6 +95,8 @@ export const AboutPage = () => {
                 </div>
             </div>
 
+            <QualityBadge />
+
             {/* Experience Timeline */}
             <div style={{ marginTop: '6rem' }}>
                 <h3 className="section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Experience & Milestones</h3>
@@ -153,6 +157,10 @@ export const AboutPage = () => {
                 </div>
             </div>
 
+            <div style={{ marginTop: '6rem' }}>
+                <h3 className="section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Interactive Career Matrix</h3>
+                <DynamicResume />
+            </div>
         </section>
     );
 };

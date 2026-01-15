@@ -297,7 +297,7 @@ section {
 
   .desktop-nav,
   .desktop-nav-separator,
-  .desktop-controls {
+  .header-actions {
     display: none !important;
   }
 
@@ -334,7 +334,6 @@ section {
   scrollbar-color: var(--border-color) var(--bg-dark);
 }
 
-/* Additional Utilities */
 .image-overlay {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
 }
@@ -352,7 +351,6 @@ section {
   color: var(--accent);
 }
 
-/* Shimmer Loading Animation */
 .shimmer-loading {
   background: linear-gradient(90deg,
       rgba(255, 255, 255, 0.05) 25%,

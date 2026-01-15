@@ -2,15 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Globe, FileText, Download } from 'lucide-react';
+import { X, Globe, FileText, Download, Menu } from 'lucide-react';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
 import { ThemeSwitcher } from '../ui/ThemeSwitcher';
 
 export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
     const { t } = useTranslation();
     return (
-        <header className="container" style={{ position: 'fixed', top: '1.5rem', width: '100%', left: '0', right: '0', zIndex: 1000, display: 'flex', justifyContent: 'center', pointerEvents: 'none' }}>
-            <div className="glass navbar-container" style={{ display: 'flex', gap: '1.25rem', padding: '0.4rem 1.25rem', borderRadius: '3rem', pointerEvents: 'auto', alignItems: 'center', width: 'auto' }}>
+        <header style={{ position: 'fixed', top: '1.5rem', left: '0', right: '0', zIndex: 1000, display: 'flex', justifyContent: 'center', pointerEvents: 'none', boxSizing: 'border-box' }}>
+            <div className="glass navbar-container" style={{ display: 'flex', gap: '1.25rem', padding: '0.4rem 1.25rem', borderRadius: '3rem', pointerEvents: 'auto', alignItems: 'center', width: 'auto', justifyContent: 'space-between' }}>
+                <Link to="/" className="hover-link" style={{ fontWeight: 800, fontSize: '1.2rem', color: 'var(--accent)', display: 'flex', alignItems: 'center' }}>
+                    <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: 'var(--accent)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem' }}>JE</div>
+                </Link>
                 <nav className="desktop-nav">
                     <ul style={{ display: 'flex', gap: '1.25rem', margin: 0 }}>
                         <li><Link to="/" className="hover-link" style={{ fontSize: '0.9rem', fontWeight: 500 }}>{t('nav.home')}</Link></li>
@@ -37,7 +40,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                 </div>
 
                 <button className="mobile-menu-toggle btn-icon" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ display: 'none' }}>
-                    {isMenuOpen ? <X size={24} /> : <Globe size={24} />}
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
