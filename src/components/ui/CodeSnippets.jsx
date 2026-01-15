@@ -63,7 +63,7 @@ export const CodeSnippets = () => {
     };
 
     return (
-        <section className="container" style={{ paddingTop: '8rem', minHeight: '100vh' }}>
+        <section className="container" style={{ paddingTop: '5.5rem', minHeight: '100vh' }}>
             <h2 className="section-title"><span>{navigator.language === 'uz' ? 'Kod Namunalari' : 'Code Gallery'}</span>Useful Snippets</h2>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px' }}>
                 A collection of reusable hooks, utilities, and components I've built along the way.

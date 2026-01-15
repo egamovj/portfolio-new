@@ -8,10 +8,10 @@ export const HeroPage = () => {
     const { t } = useTranslation();
     return (
         <section id="home" className="container" style={{
-            minHeight: '100vh',
+            // minHeight: '70vh',
             display: 'flex',
             alignItems: 'center',
-            paddingTop: '8rem'
+            paddingTop: '10rem',
         }}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="hero-content" style={{ width: '100%' }}>
                 <span className="accent-text" style={{ letterSpacing: '2px', fontWeight: 600 }}>{t('hero.role')}</span>
