@@ -39,7 +39,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                     </div>
                 </div>
 
-                <button className="mobile-menu-toggle btn-icon" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ display: 'none' }}>
+                <button className="mobile-menu-toggle btn-icon" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ display: 'none' }} aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
