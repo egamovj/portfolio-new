@@ -108,12 +108,13 @@ ul {
 
 .btn-primary {
   background-color: var(--accent);
-  color: #fff;
-  /* Always white for readability on emerald */
+  color: var(--bg-dark);
+  font-weight: 600;
+  /* Dark text on bright emerald for high contrast */
 }
 
 [data-theme='light'] .btn-primary {
-  color: #fff;
+  color: white;
 }
 
 .btn-primary:hover {
