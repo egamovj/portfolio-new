@@ -182,12 +182,12 @@ export const ProjectsPage = () => {
                                     <h3 style={{ fontSize: '1.3rem' }}>{proj.name}</h3>
                                     <div style={{ display: 'flex', gap: '0.8rem' }}>
                                         {proj.github && (
-                                            <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View Code">
+                                            <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View Code" aria-label="View Source Code">
                                                 <Github size={18} />
                                             </a>
                                         )}
                                         {proj.live && (
-                                            <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn-icon" title="Live Demo">
+                                            <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn-icon" title="Live Demo" aria-label="View Live Demo">
                                                 <ExternalLink size={18} />
                                             </a>
                                         )}

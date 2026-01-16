@@ -19,7 +19,7 @@ export const Modal = ({ isOpen, onClose, title, children }) => (
                     className="glass modal-content"
                     onClick={e => e.stopPropagation()}
                 >
-                    <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-primary)' }}>
+                    <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-primary)' }} aria-label="Close modal">
                         <X size={24} />
                     </button>
                     <h2 style={{ marginBottom: '2rem' }}>{title}</h2>
