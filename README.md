@@ -38,7 +38,7 @@ A premium, high-performance portfolio website built with **React 19**, **Framer 
 - 💼 **LinkedIn:** [Jo'rabek Egamov](https://linkedin.com/in/egamovj)
 - 🐙 **GitHub:** [@egamovj](https://github.com/egamovj)
 - ✈️ **Telegram:** [@egamov_j](https://t.me/egamov_j)
-- 📧 **Email:** egamov.j@example.com (Replace with actual if preferred)
+- 📧 **Email:** egamovj90@gmail.com
 
 ---
 
