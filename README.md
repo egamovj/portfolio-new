@@ -19,3 +19,16 @@ A premium, high-performance portfolio website built with **React 19**, **Framer 
 - 🔒 **Admin Dashboard:** Private management area integrated with **Firebase**.
 
 ---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** Vanilla CSS (Custom Hooks & Modern CSS Properties)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Backend/DB:** [Firebase](https://firebase.google.com/)
+- **Internationalization:** [i18next](https://www.i18next.com/)
+- **Deployment:** [Netlify](https://www.netlify.com/)
+
+---
