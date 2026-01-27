@@ -42,4 +42,4 @@ A premium, high-performance portfolio website built with **React 19**, **Framer 
 
 ---
 
-
+Developed with ❤️ by **Jo'rabek Egamov**
